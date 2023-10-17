@@ -42,6 +42,7 @@ const App = () => {
     <div>
       <Text handleChange={filterByNameandAge} />
       <Dropdown data={data} handleChange={filterByCityandOcc} />
+      <Dropdown data={data} handleChange={filterByCityandOcc} />
       <Table data={tableData} />
     </div>
   )
