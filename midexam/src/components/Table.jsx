@@ -19,7 +19,7 @@ const Table = (props) => {
         <tbody>
           {data.map((obj) => {
             return (
-              <tr>
+              <tr key={obj.id}>
                 <td>{obj.id}</td>
                 <td>{obj.name}</td>
                 <td>{obj.age}</td>

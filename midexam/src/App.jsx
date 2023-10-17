@@ -1,14 +1,34 @@
 import React, { useState } from 'react'
 import Table from './components/Table'
 import sampleData from './Data'
-
-const data = sampleData
-// const [tableData, setTableData] = useState([])
+import Text from './components/Text'
 
 const App = () => {
+  const data = sampleData
+  const [tableData, setTableData] = useState(sampleData)
+
+  function isNumber(n) {
+    return /^-?[\d.]+(?:e-?\d+)?$/.test(n)
+  }
+
+  function filterByNameandAge(e) {
+    const val = e.target.value
+
+    setTableData(
+      data.filter((user) => {
+        console.log(user.name.toLowerCase())
+        return (
+          user.name.toLowerCase().includes(val.toLowerCase()) ||
+          user.age.toString().includes(val)
+        )
+      })
+    )
+  }
+
   return (
     <div>
-      <Table data={data} />
+      <Text handleChange={filterByNameandAge} />
+      <Table data={tableData} />
     </div>
   )
 }
