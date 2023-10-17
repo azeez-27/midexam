@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Table from './components/Table'
 import sampleData from './Data'
 import Text from './components/Text'
+import Dropdown from './components/Dropdown'
 
 const App = () => {
   const data = sampleData
@@ -25,9 +26,12 @@ const App = () => {
     )
   }
 
+  function filterByCityandOcc() {}
+
   return (
     <div>
       <Text handleChange={filterByNameandAge} />
+      <Dropdown data={data} handleChange={filterByCityandOcc} />
       <Table data={tableData} />
     </div>
   )

@@ -1,15 +1,13 @@
-// import React from 'react'
+import React from 'react'
 
-// const Dropdown = ({ props }) => {
-//   return (
-//     <select name='country' onChange={this.handleChange}>
-//       {props.data.map((obj) => {
-//         ;<option value={obj}>Pakistan</option>
-//       })}
-//       <option value='Pakistan'>Pakistan</option>
-//       <option value='Switzerland'>Switzerland</option>
-//     </select>
-//   )
-// }
+const Dropdown = ({ data }, { handleChange }) => {
+  return (
+    <select name='city' onChange={handleChange}>
+      {data.map((obj) => {
+        ;<option value={obj}>{obj}</option>
+      })}
+    </select>
+  )
+}
 
-// export default Dropdown
+export default Dropdown
