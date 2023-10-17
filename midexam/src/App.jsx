@@ -17,7 +17,6 @@ const App = () => {
 
     setTableData(
       data.filter((user) => {
-        console.log(user.name.toLowerCase())
         return (
           user.name.toLowerCase().includes(val.toLowerCase()) ||
           user.age.toString().includes(val)
@@ -26,7 +25,18 @@ const App = () => {
     )
   }
 
-  function filterByCityandOcc() {}
+  function filterByCityandOcc(e) {
+    const val = e.target.value
+
+    setTableData(
+      data.filter((user) => {
+        return (
+          user.city.toLowerCase().includes(val.toLowerCase()) ||
+          user.occupation.toString().includes(val)
+        )
+      })
+    )
+  }
 
   return (
     <div>
